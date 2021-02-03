@@ -1,0 +1,17 @@
+name: GIF comment
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  comment:
+    if: github.event_name == 'issues'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Add funny comment
+        uses: actions/checkout@v2
+        id: GIFComment
+        with:
+          key: ${{ secrets.GIPHY_KEY }}
+          comment_type: 'gif'
+          
