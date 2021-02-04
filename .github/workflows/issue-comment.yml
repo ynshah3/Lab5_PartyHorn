@@ -1,4 +1,5 @@
 name: GIF comment
+
 on:
   issues:
     types: [opened]
@@ -10,7 +11,8 @@ jobs:
     steps:
       - name: Add funny comment
         uses: Marta83/funny-comment-action@v2.1
-        id: GIFComment
+        id: gif_comment
         with:
-          GIPHY_TOKEN: ${{ secrets.GIPHY_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GIPHY_TOKEN: ${{ secrets.GIPHY_TOKEN }}
           comment_type: 'gif'
