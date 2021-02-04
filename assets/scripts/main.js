@@ -53,7 +53,9 @@ function updateImageAndAudio(imageURL, audioURL) {
   audioObj.src = audioURL;
 }
 
-document.getElementById("honk-btn").addEventListener("click", function doNotReload() {
-  document.getElementById("honk-btn").type = "button";
+let honkObj = document.getElementById("honk-btn")
+
+honkObj.addEventListener("click", function(event) {
+  event.preventDefault();
   document.getElementById("horn-sound").play();
 });
